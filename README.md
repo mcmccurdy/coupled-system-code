@@ -4,3 +4,5 @@ fig3.tex: .tex from paper with data. "Critical depth ratios for various εT (rat
 
 fig6.tex: .text file from paper with data. "Energy and Nusselt profiles and their respective derivatives for the three flow configurations shown in figures 4 and 5. Fixed parameters: Da = 1.0 × 10−4, Prm = .7, εT =.7, α=1.0, ∆t=2.5×10−4."
 
+lincase.m: calculating marginal stability curves, as done in fig. 2 of the paper. 
+
