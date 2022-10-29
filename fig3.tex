@@ -1,0 +1,119 @@
+
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=2.0in,	%% 3.5 originally
+height=2.0in, 	%% 2 originally
+scale only axis,
+title ={{\bf $\Da$ vs. $\dhatc$}},
+ymode=log, 
+    xmode=log,
+    xmin=10^(-8.2),
+    xmax=10^(-3.8),
+    ymin=10^(-1.8),
+    ymax=10^(-.4), 
+    xlabel={Darcy number, $\Da$},
+    ylabel= {Critical depth ratio, $\dhatc$},
+    grid=major,
+    extra y ticks={10^(-.5),10^(-1.5)},
+    legend style={at={(1.3,.75)},
+    anchor=north,legend columns=1}
+]
+                \addplot[firstColor, line width=1pt] 
+      coordinates {
+		((1.0e-02)^2, 0.199228714051074)
+		((1.0e-04)^2, 0.0199228714051074)
+	};
+      	  \addplot[secondColor, line width=1pt] 
+      coordinates {
+		((1.0e-02)^2, 0.235730593482099)
+		((1.0e-04)^2, 0.0235730593482099)
+	};
+      		 \addplot[thirdColor, line width=1pt] 
+      coordinates {
+		((1.0e-02)^2, 0.281751949425180)
+		((1.0e-04)^2, 0.0281751949425180)
+	};
+		\addlegendimage{combo legend}
+      \legend{ $\epsilon_{\,T}=0.5$,$\epsilon_{\,T}=0.7$,$\epsilon_{\,T}=1.0$};
+      
+      \addplot[black, line width=1pt] 
+      coordinates {
+		((1.0e-02)^2, 0.199228714051074)
+		((1.0e-04)^2, 0.0199228714051074)
+	};
+	\label{blackLine}
+	
+	       \addplot[firstColor, line width=1pt] 
+      coordinates {
+		((1.0e-02)^2, 0.199228714051074)
+		((1.0e-04)^2, 0.0199228714051074)
+	};
+	
+	\addplot[scatter, 
+      only marks, 
+      scatter/use mapped color = {draw=black, fill=black},black] 
+      coordinates {
+		((1.0e-02)^2, .229)
+		((5.0e-03)^2, .1557)
+		((2.5e-03)^2, .1068) 
+		((1.0e-03)^2, .06555) 
+		((5.0e-04)^2, .04561)
+		((2.5e-04)^2, .03185) 
+		((1.0e-04)^2, .01991)
+	};	
+	\label{blackDot}
+	
+            \addplot[scatter, 
+      only marks, 
+      scatter/use mapped color = {draw=firstColor, fill=firstColor},firstColor] 
+      coordinates {
+		((1.0e-02)^2, .229)
+		((5.0e-03)^2, .1557)
+		((2.5e-03)^2, .1068) 
+		((1.0e-03)^2, .06555) 
+		((5.0e-04)^2, .04561)
+		((2.5e-04)^2, .03185) 
+		((1.0e-04)^2, .01991)
+	};		  
+	\addplot[scatter, 
+      only marks, 
+      scatter/use mapped color = {draw=secondColor, fill=secondColor}, secondColor] 
+      coordinates {
+		((1.0e-02)^2, .267)
+		((5.0e-03)^2, .181)
+		((2.5e-03)^2, .1245) 
+		((1.0e-03)^2, .0766) 
+		((5.0e-04)^2, .05335)
+		((2.5e-04)^2, .03731) 
+		((1.0e-04)^2, .02336)
+	};
+      \addplot[scatter, 
+      only marks, 
+      scatter/use mapped color = {draw=thirdColor, fill=thirdColor}, thirdColor] 
+      coordinates {
+		((1.0e-02)^2, .3143)
+		((5.0e-03)^2, .2132)
+		((2.5e-03)^2, .1465) 
+		((1.0e-03)^2, .09029) 
+		((5.0e-04)^2, .063004)
+		((2.5e-04)^2, .044125) 
+		((1.0e-04)^2, .027666)
+	};
+	 \addplot[black, line width=1pt] 
+      coordinates {
+		(3.16228e-07, 0.0316227766)
+		(0.0000316228, 0.0316227766)
+		(0.0000316228, 0.1)
+		(3.16228e-07, 0.0316227766)
+	};
+	    \addplot [black, line width=1pt] coordinates {(3.16228e-07, 0.0316227766) (0.0000316228, 0.0316227766)}
+             node[below, pos = .5] {4};
+             \addplot [black, line width=1pt] coordinates {(0.0000316228, 0.0316227766) (0.0000316228, 0.1)}
+             node[right, pos = .5] {1};
+\end{axis}
+
+\node[draw,fill=none,right] 
+	at(5.53,1.6) {\begin{tabular}{cl} \ref{blackLine} & Marginal Stability \\ \ref{blackDot}& Theory \end{tabular}};
+
+\end{tikzpicture}%
