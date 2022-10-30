@@ -6,7 +6,7 @@ N=2^5;                   %number of poly. used to find evals
 M=50;                   %number of values along wave-number range
 et = 0.7;                %khat value
 alphaBJSJ =1.000;       %BJSJ coefficient
-delt = 5.00e-03;   %Darcy number
+delt = 5.00e-03;   %sqrt of Darcy number
 caseNo = 20;             %case number (for organization in notes)
 
 %Jone: gam = 0.5, porMed = 1.0;
